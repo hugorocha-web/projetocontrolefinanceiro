@@ -4,6 +4,7 @@ let saida = document.querySelector('#dinsaida')
 let btnoperacao = document.querySelector('#btn')
 let popup = document.querySelector('.fundo-escuro')
 let operacoes = []
+let valorsaldo = 0;
 
 
 
@@ -12,7 +13,6 @@ btnoperacao.addEventListener('click', addnovaop)
 
 function addnovaop(){
     popup.classList.toggle('popup')
-    console.log('1', popup)
     let btnadicionar = document.querySelector('#add')
     btnadicionar.addEventListener('click', ()=>{
         let descricao = document.querySelector('#labeldescrição').value
@@ -22,9 +22,20 @@ function addnovaop(){
         let categoria = document.querySelector('#labelcate').value
         
         let valor = document.querySelector('#labelvalor').value
+        
         valor =Number(valor)
+
+        
         if (!isNaN(valor)) {
+            if (tipo ==='entrada') {
+                valorsaldo+=valor
+            } else {
+                valorsaldo-=valor
+            }
+            console.log(valorsaldo)
+            atualizardados(valorsaldo)
             popup.classList.remove('popup')
+            document.querySelector('#labelvalor').value = ''
         } else {
             return
         }
@@ -37,4 +48,7 @@ function addnovaop(){
     })
 
     
+}
+function atualizardados(saldovalor, entradas, despesas){
+    saldo.textContent = 'R$ ' + saldovalor
 }
