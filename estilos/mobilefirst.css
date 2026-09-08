@@ -403,7 +403,11 @@ article{
   background-color: rgba(0, 0, 0, 0.6); 
   z-index: 998; 
  
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
+  
+}
+.fundo-escuro.popup{
+    display: flex;
 }

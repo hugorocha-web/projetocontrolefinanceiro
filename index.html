@@ -60,7 +60,7 @@
                     <div class="valor"><p>R$ 0</p></div>
                 </div>
             </div>
-            <button>
+            <button id="btn">
                 <i class="fa-solid fa-plus"></i>
                 <p>Nova Movimentação</p>
             </button>
@@ -73,7 +73,7 @@
             </div>
         </section>
         <section id="secao4">
-            <div class="coisas" id="saidabtn">
+            <div class="coisas" id="saidabtn" style="display: none;">
                 <div>
                     <i class="fa-solid fa-arrow-up-long"></i>
                     <div>
@@ -83,7 +83,7 @@
                 </div>
                 <p id="valorentrada">R$ 2000000,00</p>
             </div>
-            <div class="coisas" id="entradabtn">
+            <div class="coisas" id="entradabtn" style="display: none;">
                 <div>
                     <i class="fa-solid fa-arrow-down-long"></i>
                     <div>
@@ -94,12 +94,12 @@
                 <p id="valorsaida">R$ 100,00</p>
             </div>
         </section>
-        <div class="fundo-escuro" style="display: none;">
+        <div class="fundo-escuro">
             <article>
                 <h1>Nova Transação</h1>
                 <div id="disc">
                     <label for="labeldescrição">Descrição</label>
-                    <input type="text" placeholder="" id="labeldescrição">
+                    <input type="number" placeholder="" id="labeldescrição">
                 </div>
                 <div id="tipscate">
                     <div id="tipo">
