@@ -210,16 +210,20 @@ main{
     #secao3{
         display: flex;
         justify-content: center;
+        #btnsfiltros{
+            display: flex;
+        }
         button{
             padding: 10px;
             border-radius: 30px;
             border: none;
             background-color: #1b74e2;
             color: aliceblue;
-            width: 210px;
+            width: 30vw;
             height: 65px;
             font-size: 1.6em;
             transition-duration: 0.4s;
+            margin: 4px;
 
         }
         button:hover{
