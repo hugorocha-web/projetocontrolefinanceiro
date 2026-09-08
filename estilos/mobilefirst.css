@@ -211,6 +211,8 @@ main{
         display: flex;
         justify-content: center;
         #btnsfiltros{
+            background-color: aliceblue;
+            border-radius: 14px;
             display: flex;
         }
         button{
@@ -230,6 +232,48 @@ main{
             background-color: #08213f;
             color: rgb(232, 231, 231);
         }
+    }
+    #secao4{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .coisas{
+            display: flex;
+            background-color: rgb(246, 246, 246);
+            height: 90px;
+            border-radius: 20px;
+            width: 90%;
+            margin: 15px 9px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.185);
+            align-items: flex-start;
+            padding-top: 10px;
+            div{
+                display: flex;
+                flex: 1 1 60%;
+                align-items: center;
+                i{
+                    font-size: 2em;
+                }
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: -50%;
+                    justify-content: flex-start;
+                    #descrição{
+                        font-size: 1.3em;
+                        font-weight: bold;
+                    }
+                    
+                }
+            }
+            #valorentrada, #valorsaida{
+                flex: 1 1 40%;
+                font-size: 2em;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        }
+        
+
     }
 
 
