@@ -1,0 +1,103 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.059);
+    padding: 20px;
+    h1{
+        font-size: 1.8em;
+    }
+
+}
+main{
+
+    #secao1{
+        height: 250px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1.4fr 1fr;
+        gap: 10px;
+        #saldo{
+            background-image: linear-gradient(90deg,  rgb(27, 116, 226),  rgb(25, 174, 238));
+            grid-column: 1 / 3;
+            box-shadow: 0px 0px 10px rgba(5, 19, 53, 0.571);
+            margin: 15px 40px;
+            border-radius: 14px;
+            display: flex;
+            i{
+                font-size: 4.5em;
+                color: rgba(255, 255, 255, 0.768);
+                margin-top: 13px;
+            }
+            div{
+                margin: 20px;
+                color: aliceblue;
+                p{
+                    font-size: 1.5em;
+                }
+                h2{
+                    font-size: 2.3em;
+                }
+            }
+        }
+        #entradas{
+            background-color: rgba(105, 175, 162, 0.653);
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+            margin: 0px 0px 0px 30px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+            i{
+                font-size: 2.6em;
+                color: rgb(50, 255, 9);
+                margin-top: px;
+            }
+            div{
+                margin: 10px;
+                color: rgb(0, 0, 0);
+                p{
+                    font-size: 1.3em;
+                }
+                h2{
+                    font-size: 1.5em;
+                }
+            }
+        }
+        #despesas{
+            background-color: rgba(175, 105, 105, 0.497);
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+            margin: 0px 30px 0px 0px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+            i{
+                font-size: 2.6em;
+                color: rgb(252, 6, 6);
+                margin-top: 13px;
+            }
+            div{
+                
+                margin: 10px;
+                color: rgb(14, 14, 14);
+                p{
+                    font-size: 1.3em;
+                }
+                h2{
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+
+
+
+
+
+}
