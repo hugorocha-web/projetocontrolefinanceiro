@@ -249,27 +249,53 @@ main{
             padding-top: 10px;
             div{
                 display: flex;
-                flex: 1 1 60%;
+                flex: 1 1 200%;
                 align-items: center;
+                justify-content: flex-start;
                 i{
                     font-size: 2em;
+                    flex: 1 1 2fr;
+                    padding: 20px;
+                    border-radius: 30px;
+                }
+                .fa-arrow-up-long{
+                    color: rgb(31, 157, 102);
+                    background-color: #0fffc7a7;
+                    
+                }
+                .fa-arrow-down-long{
+                    color: rgb(228, 23, 50);
+                    background-color: #ff0f0f6c;
+                    
                 }
                 div{
                     display: flex;
                     flex-direction: column;
-                    margin-left: -50%;
                     justify-content: flex-start;
+                    align-items: flex-start;
+                    margin-left: 10px;
+                    margin-top: 3px;
+                    flex: 1 1 2fr;
                     #descrição{
                         font-size: 1.3em;
                         font-weight: bold;
                     }
+                    #descrição {
+                        max-width: 200px;
+                        overflow: hidden;
+                        text-overflow: ellipsis; 
+                        white-space: nowrap;
+                    }
                     
                 }
+            
             }
             #valorentrada, #valorsaida{
-                flex: 1 1 40%;
+                flex: 1 1 100%;
                 font-size: 2em;
+                font-weight: bold;
                 font-family: Arial, Helvetica, sans-serif;
+                margin-right: 20px;
             }
         }
         
