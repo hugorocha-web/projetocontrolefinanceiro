@@ -15,8 +15,15 @@ let apptrans = document.querySelector('#valortrans')
 let applazer = document.querySelector('#valorlazer')
 let clonado = document.querySelector('#entradabtn')
 let clonadosaida = document.querySelector('#saidabtn')
-
-
+const todosPopus = document.querySelector('#todos')
+const entradaPopus = document.querySelector('#tdsentradas')
+const despesasPopus = document.querySelector('#tdsdespesas')
+let divali = document.querySelector('#tamanhoalimentação')
+let divtrans = document.querySelector('#tamanhotransporte')
+let divlaz = document.querySelector('#tamanholazer')
+todosPopus.addEventListener('click', atualizarpopus)
+entradaPopus.addEventListener('click', entrada)
+despesasPopus.addEventListener('click', despesas)
 
 btnoperacao.addEventListener('click', addnovaop)
 let btnadicionar = document.querySelector('#add')
@@ -50,6 +57,7 @@ function adicionar(){
         'categoria':categoria,
         'valor':valor
         })
+        localStorage.setItem("operacoes", JSON.stringify(operacoes));
         if (tipo ==='entrada') {
             valorsaldo+=valor
             valorentradas+=valor
@@ -106,9 +114,6 @@ function atualizardadosgrafico(alimentaçãoapp, trasn, laz){
     let graficoali = (alimentaçãoapp/ maior) * 100
     let graficotrans = (trasn/ maior) * 100
     let graficolaz = (laz/ maior) * 100
-    let divali = document.querySelector('#tamanhoalimentação')
-    let divtrans = document.querySelector('#tamanhotransporte')
-    let divlaz = document.querySelector('#tamanholazer')
     divali.style.width = graficoali + '%'
     divtrans.style.width = graficotrans + '%'
     divlaz.style.width = graficolaz + '%'
@@ -141,4 +146,131 @@ function atualizarpopus(){
 
     }
 }
-window.onload
+function entrada(){
+    let secao = document.querySelector('#secao4')
+    secao.innerHTML = ''
+    
+    for(let i =0 ; operacoes.length > i ; i++){
+        
+        if(operacoes[i].tipo ==='entrada'){
+            let clone = clonado.cloneNode(true)
+            clone.querySelector('#descrição').textContent = operacoes[i].descricao
+            clone.querySelector('#valorentrada').textContent = 'R$ ' + operacoes[i].valor
+            clone.style.display = 'flex'
+            secao.appendChild(clone)
+            
+
+        }
+
+    }
+}
+function despesas(){
+    let secao = document.querySelector('#secao4')
+    secao.innerHTML = ''
+    
+    for(let i =0 ; operacoes.length > i ; i++){
+        
+    
+        if(operacoes[i].tipo ==='saida'){
+            let clone = clonadosaida.cloneNode(true)
+            clone.querySelector('#descrição').textContent = operacoes[i].descricao
+            clone.querySelector('#valorsaida').textContent = 'R$ ' + operacoes[i].valor
+            clone.style.display = 'flex'
+            secao.appendChild(clone)
+
+
+        }
+
+    }
+}
+
+
+window.onload = ()=>{
+    let operacoesArmazenadas = localStorage.getItem('operacoes')
+    console.log(operacoesArmazenadas)
+    if (operacoesArmazenadas) {
+        operacoes = JSON.parse(operacoesArmazenadas)
+        console.log(operacoes)
+        atualizarpopus()
+        atualizarsaldoapos()
+        atualizarentradaapos()
+        atualizardespesasapos()
+        atualizardadosgraficoapos()
+    } 
+    else {
+        return
+    }
+};
+function atualizarsaldoapos(){
+    for(let i = 0; operacoes.length > i; i++){
+        if(operacoes[i].tipo==='entrada'){
+            valorsaldo += operacoes[i].valor
+        }
+        else{
+            valorsaldo -= operacoes[i].valor
+        }
+    }
+    saldo.textContent = 'R$ ' + valorsaldo
+    
+    
+}
+function atualizarentradaapos(){
+    for(let i = 0; operacoes.length > i; i++){
+        if(operacoes[i].tipo==='entrada'){
+            valorentradas += operacoes[i].valor
+        }
+    }
+    entradas.textContent = 'R$ ' + valorentradas
+    
+    
+}
+function atualizardespesasapos(){
+    for(let i = 0; operacoes.length > i; i++){
+        if(operacoes[i].tipo==='saida'){
+            valorsaida += operacoes[i].valor
+        }
+    }
+    saida.textContent = 'R$ ' + valorsaida
+    
+    
+}
+function atualizardadosgraficoapos(){
+    
+    let maior = 0;
+    for(let i = 0; operacoes.length > i; i++){
+        if(operacoes[i].tipo==='saida'){
+            
+            if (operacoes[i].categoria==='alimentação') {
+                alimentação += operacoes[i].valor
+            } 
+            else if(operacoes[i].categoria==='transporte'){
+                transporte += operacoes[i].valor
+            }
+            else if(operacoes[i].categoria==='lazer'){
+                lazer += operacoes[i].valor
+            }
+            let todos = [alimentação, transporte, lazer]
+            for (let i = 0; i<todos.length; i++){
+        
+                if(todos[i] > maior){
+                    maior = todos[i]
+                }
+        
+            }
+        }
+    }
+    appali.textContent = 'R$ ' + alimentação
+    apptrans.textContent = 'R$ ' + transporte
+    applazer.textContent = 'R$ ' + lazer
+    let graficoali = (alimentação/ maior) * 100
+    
+    let graficotrans = (transporte/ maior) * 100
+
+    let graficolaz = (lazer/ maior) * 100
+    console.log(graficoali, graficotrans, graficolaz)
+    divali.style.width = graficoali + '%'
+    divtrans.style.width = graficotrans + '%'
+    divlaz.style.width = graficolaz + '%'
+    
+    
+}
