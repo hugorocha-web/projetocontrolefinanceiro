@@ -232,6 +232,9 @@ main{
             background-color: #08213f;
             color: rgb(232, 231, 231);
         }
+        button.ativado{
+            background-color: #08213f;
+        }
     }
     #secao4{
         display: flex;

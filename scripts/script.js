@@ -121,6 +121,17 @@ function atualizardadosgrafico(alimentaçãoapp, trasn, laz){
     
 }
 function atualizarpopus(){
+    if(entradaPopus.classList.contains('ativado')){
+        entradaPopus.classList.remove('ativado')
+        todosPopus.classList.add('ativado')
+    }
+    else if(despesasPopus.classList.contains('ativado')){
+        despesasPopus.classList.remove('ativado')
+        todosPopus.classList.add('ativado')
+    }
+    else{
+        todosPopus.classList.add('ativado')
+    }
     let secao = document.querySelector('#secao4')
     secao.innerHTML = ''
     
@@ -148,6 +159,17 @@ function atualizarpopus(){
     }
 }
 function entrada(){
+    if(todosPopus.classList.contains('ativado')){
+        entradaPopus.classList.add('ativado')
+        todosPopus.classList.remove('ativado')
+    }
+    else if(despesasPopus.classList.contains('ativado')){
+        despesasPopus.classList.remove('ativado')
+        entradaPopus.classList.add('ativado')
+    }
+    else{
+        entradaPopus.classList.add('ativado')
+    }
     let secao = document.querySelector('#secao4')
     secao.innerHTML = ''
     
@@ -166,6 +188,17 @@ function entrada(){
     }
 }
 function despesas(){
+    if(todosPopus.classList.contains('ativado')){
+        despesasPopus.classList.add('ativado')
+        todosPopus.classList.remove('ativado')
+    }
+    else if(entradaPopus.classList.contains('ativado')){
+        despesasPopus.classList.add('ativado')
+        entradaPopus.classList.remove('ativado')
+    }
+    else{
+        despesasPopus.classList.add('ativado')
+    }
     let secao = document.querySelector('#secao4')
     secao.innerHTML = ''
     
