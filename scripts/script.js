@@ -44,8 +44,9 @@ function adicionar(){
         
     let valor = document.querySelector('#labelvalor').value
     
-        
-        
+    if(descricao === ''){
+        return
+    }    
     if(valor ===''){
         return
     }
