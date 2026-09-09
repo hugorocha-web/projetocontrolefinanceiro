@@ -124,10 +124,10 @@ main{
                 div{
                     width: 400px;
                     #tamanhoalimentação{
-                    width: 100%;
+                    width: 2%;
                     background-color: rgb(10, 10, 10);
                     height: 30px;
-                    border-radius: 10px;
+                    border-radius: 0px 10px 10px 0px;
                     }
                 }
                 
@@ -150,10 +150,10 @@ main{
                 div{
                     width: 400px;
                     #tamanhotransporte{
-                    width: 50%;
+                    width: 2%;
                     background-color: rgb(8, 8, 8);
                     height: 30px;
-                    border-radius: 10px;
+                    border-radius: 0px 10px 10px 0px;
                     }
                 }
                 
@@ -175,10 +175,10 @@ main{
                 div{
                     width: 400px;
                     #tamanholazer{
-                    width: 16.6%;
+                    width: 2%;
                     background-color: rgb(8, 8, 8);
                     height: 30px;
-                    border-radius: 10px;
+                    border-radius: 0px 10px 10px 0px;
                     }
                 }
                 
@@ -277,7 +277,7 @@ main{
                     margin-top: 3px;
                     flex: 1 1 2fr;
                     #descrição{
-                        font-size: 1.3em;
+                        font-size: 1.1em;
                         font-weight: bold;
                     }
                     #descrição {
@@ -292,8 +292,7 @@ main{
             }
             #valorentrada, #valorsaida{
                 flex: 1 1 100%;
-                font-size: 2em;
-                font-weight: bold;
+                font-size: 1.8em;
                 font-family: Arial, Helvetica, sans-serif;
                 margin-right: 20px;
             }
@@ -362,6 +361,7 @@ article{
             border: 1px solid rgba(0, 0, 0, 0.275);
             text-align: center;
             font-size: 1.3em;
+            font-family: Arial, Helvetica, sans-serif;
         }
     }
     h1{
@@ -410,4 +410,8 @@ article{
 }
 .fundo-escuro.popup{
     display: flex;
+}
+.ds{
+    background-color: #9f9f9f;
+    border-radius: 0px 10px 10px 0px;
 }
