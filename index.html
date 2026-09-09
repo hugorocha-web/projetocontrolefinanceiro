@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle Financeiro</title>
     <link rel="stylesheet" href="estilos/mobilefirst.css">
-    <link rel="stylesheet" href="estilos/outros.css" media="screen and (min-width: 791px)">
+    <link rel="stylesheet" href="estilos/tablet.css" media="screen and (min-width: 768px) and (max-width: 1053px)">
+    <link rel="stylesheet" href="estilos/pc.css" media="screen and (min-width: 1053px)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
@@ -17,54 +18,91 @@
             <div id="saldo">
                 <i class="fa-solid fa-circle-arrow-right"></i>
                 <div>
-                    <p>saldo</p>
+                    <p>Saldo atual</p>
                     <h2 id="dinsaldo">R$ 0</h2>
                 </div>
             </div>
             <div id="entradas">
                 <i class="fa-solid fa-arrow-up-long"></i>
                 <div>
-                    <p>entradas</p>
+                    <p>Entradas</p>
                     <h2 id="dinentradas">R$ 0</h2>
                 </div>
             </div>
             <div id="despesas">
                 <i class="fa-solid fa-arrow-down-long"></i>
                  <div>
-                    <p>despesas</p>
+                    <p>Despesas</p>
                     <h2 id="dinsaida">R$ 0</h2>
                 </div>
             </div>
         </section>
-        <section id="secao2">
-            <div id="grafico">
-                <div id="alimentação">
-                    <p>alimentação</p>
-                    <div class="ds">
-                        <div id="tamanhoalimentação"></div>
+        <div id="divitens">
+            <section id="secao2">
+                <div id="grafico">
+                    <div id="alimentação">
+                        <p>alimentação</p>
+                        <div class="ds">
+                            <div id="tamanhoalimentação"></div>
+                        </div>
+                        <div class="valor" id="valorali"><p>R$ 0</p></div>
                     </div>
-                    <div class="valor" id="valorali"><p>R$ 0</p></div>
-                </div>
-                <div id="transporte">
-                    <p>transporte</p>
-                    <div class="ds">
-                        <div id="tamanhotransporte"></div>
+                    <div id="transporte">
+                        <p>transporte</p>
+                        <div class="ds">
+                            <div id="tamanhotransporte"></div>
+                        </div>
+                        <div class="valor" id="valortrans"><p>R$ 0</p></div>
                     </div>
-                    <div class="valor" id="valortrans"><p>R$ 0</p></div>
-                </div>
-                <div id="lazer">
-                    <p>lazer</p>
-                    <div class="ds">
-                        <div id="tamanholazer"></div>
+                    <div id="lazer">
+                        <p>lazer</p>
+                        <div class="ds">
+                            <div id="tamanholazer"></div>
+                        </div>
+                        <div class="valor" id="valorlazer"><p>R$ 0</p></div>
                     </div>
-                    <div class="valor" id="valorlazer"><p>R$ 0</p></div>
                 </div>
+                <button id="btn">
+                    <i class="fa-solid fa-plus"></i>
+                    <p>Nova Movimentação</p>
+                </button>
+            </section>
+            <div class="fundo-escuro">
+                <article>
+                    <h1>Nova Transação</h1>
+                    <div id="disc">
+                        <label for="labeldescrição">Descrição</label>
+                        <input type="text" placeholder="" id="labeldescrição">
+                    </div>
+                    <div id="tipscate">
+                        <div id="tipo">
+                            <label for="labeltipo">Tipo</label>
+                            <select id="labeltipo" name="tipo">
+                                <option value="entrada">Entrada</option>
+                                <option value="saida">Saida</option>
+                
+                            </select>
+                        </div>
+                        <div id="categoria">
+                            <label for="labelcate">Categoria</label>
+                            <select id="labelcate" name="categoria">
+                                <option value="alimentação">Alimentação</option>
+                                <option value="transporte">Trasporte</option>
+                                <option value="lazer">Lazer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="valornova">
+                        <label for="labelvalor">Valor</label>
+                        <input type="text" placeholder="R$" id="labelvalor">
+                    </div>
+                    <div id="buttons">
+                        <button id="add">adicionar</button>
+                        <button id="can">Cancelar</button>
+                    </div>
+                </article>
             </div>
-            <button id="btn">
-                <i class="fa-solid fa-plus"></i>
-                <p>Nova Movimentação</p>
-            </button>
-        </section>
+        </div>
         <section id="secao3">
             <div id="btnsfiltros">
                 <button id="todos">Todas</button>
@@ -94,40 +132,7 @@
                 <p id="valorsaida">R$ 100,00</p>
             </div>
         </section>
-        <div class="fundo-escuro">
-            <article>
-                <h1>Nova Transação</h1>
-                <div id="disc">
-                    <label for="labeldescrição">Descrição</label>
-                    <input type="text" placeholder="" id="labeldescrição">
-                </div>
-                <div id="tipscate">
-                    <div id="tipo">
-                        <label for="labeltipo">Tipo</label>
-                        <select id="labeltipo" name="tipo">
-                            <option value="entrada">Entrada</option>
-                            <option value="saida">Saida</option>
-            
-                        </select>
-                    </div>
-                    <div id="categoria">
-                        <label for="labelcate">Categoria</label>
-                        <select id="labelcate" name="categoria">
-                            <option value="alimentação">Alimentação</option>
-                            <option value="transporte">Trasporte</option>
-                            <option value="lazer">Lazer</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="valornova">
-                    <label for="labelvalor">Valor</label>
-                    <input type="text" placeholder="R$" id="labelvalor">
-                </div>
-                <div id="buttons">
-                    <button id="add">adicionar</button>
-                    <button id="can">Cancelar</button>
-                </div>
-            </article>
+        
         </div>
     </main>
     <footer>
