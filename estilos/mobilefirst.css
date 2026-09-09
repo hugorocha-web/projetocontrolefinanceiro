@@ -108,18 +108,18 @@ main{
             margin: auto;
             #alimentação{
                 display: flex;
-                font-size: 1.6em;
+                font-size: 1.4em;
                 width: 100%;
                 justify-content: space-around;
                 margin-bottom: 10px;
                 .valor{
-                    flex: 0 0 180px;
+                    flex: 0 1 180px;
                     display: flex;
                     justify-content: flex-end;
-                    
                 }
+                
                 p{
-                    flex: 0 0 170px;
+                    flex: 0 0 160px;
                 }
                 div{
                     width: 400px;
@@ -135,17 +135,18 @@ main{
             #transporte{
                 display: flex;
                 display: flex;
-                font-size: 1.6em;
+                font-size: 1.4em;
                  width: 100%;
                 justify-content: space-around;
                 margin-bottom: 10px;
                 .valor{
-                    flex: 0 0 180px;
+                    flex: 0 1 180px;
                     display: flex;
                     justify-content: flex-end;
                 }
+                
                 p{
-                    flex: 0 0 170px;
+                    flex: 0 0 160px;
                 }
                 div{
                     width: 400px;
@@ -161,16 +162,17 @@ main{
             #lazer{
                 display: flex;
                 display: flex;
-                font-size: 1.6em;
-                 width: 100%;
+                font-size: 1.4em;
+                width: 100%;
                 justify-content: space-around;
                 .valor{
-                    flex: 0 0 180px;
+                    flex: 0 1 180px;
                     display: flex;
                     justify-content: flex-end;
                 }
+                
                 p{
-                    flex: 0 0 170px;
+                    flex: 0 0 160px;
                 }
                 div{
                     width: 400px;
@@ -418,3 +420,4 @@ article{
     background-color: #9f9f9f;
     border-radius: 0px 10px 10px 0px;
 }
+
