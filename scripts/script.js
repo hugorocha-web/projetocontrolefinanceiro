@@ -85,6 +85,7 @@ function adicionar(){
             
         popup.classList.remove('popup')
         document.querySelector('#labelvalor').value = ''
+        document.querySelector('#labeldescrição').value = ''
     
     }
      else {
